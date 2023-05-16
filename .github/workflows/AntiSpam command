@@ -1,0 +1,108 @@
+{
+  "name": "AntiSpam",
+  "permissions": "NONE",
+  "permissions2": "NONE",
+  "restriction": "1",
+  "_id": "KynVS",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "message",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Message",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "message",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "message",
+      "comparison": "1",
+      "value": "3",
+      "branch": {
+        "iftrue": "2",
+        "iffalse": "2",
+        "iftrueVal": "5",
+        "iffalseVal": "8"
+      },
+      "name": "Check Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "time": "300",
+      "reason": "Spam",
+      "name": "Timeout Member"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "reason": "",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "",
+      "buttons": [],
+      "selectMenus": [],
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Mute",
+          "url": "",
+          "color": "00001",
+          "timestamp": "false",
+          "imageUrl": "",
+          "thumbUrl": "",
+          "description": "Vous avez recus une sanction pour avoir spam.\nSanction : Mute\nTemp : 5 minutes.\n\nMerci de relire les règle du serveur.",
+          "fields": [],
+          "author": "",
+          "authorUrl": "",
+          "authorIcon": "",
+          "footerText": "",
+          "footerIconUrl": ""
+        }
+      ],
+      "reply": true,
+      "ephemeral": false,
+      "tts": false,
+      "overwrite": false,
+      "dontSend": false,
+      "editMessage": "0",
+      "editMessageVarName": "",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "message",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Member Data"
+    }
+  ],
+  "comType": "3"
+}
